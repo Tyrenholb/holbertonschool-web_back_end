@@ -1,4 +1,5 @@
-#!/bin/env python3
+#!/usr/bin/env python3
+"""Provide a coroutine that waits for a random number of seconds."""
 
 import asyncio
 import random
