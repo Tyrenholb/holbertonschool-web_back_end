@@ -1,30 +1,25 @@
 # Python Async Functions
 
-This project uses Python's `asyncio` module to run coroutines concurrently,
-measure runtime, and create tasks. It also covers `async` and `await`,
-non-blocking waits, and type annotations.
+Practice with `async`, `await`, and Python's `asyncio` module.
 
 ## Exercises
 
-[0-basic_async_syntax.py](0-basic_async_syntax.py) defines
-`wait_random(max_delay=10)`. It waits for a random delay between zero and
-`max_delay` seconds and returns the delay as a float.
+[0-basic_async_syntax.py](0-basic_async_syntax.py): `wait_random` waits for a
+random delay between zero and `max_delay` seconds, then returns the delay.
+The default maximum is 10 seconds.
 
-[1-concurrent_coroutines.py](1-concurrent_coroutines.py) defines
-`wait_n(n, max_delay)`. It runs `n` random waits concurrently and collects their
-delays in completion order, giving ascending results without sorting.
+[1-concurrent_coroutines.py](1-concurrent_coroutines.py): `wait_n` runs `n`
+random waits concurrently. It collects the delays as they finish, so they arrive
+in ascending order without sorting.
 
-[2-measure_runtime.py](2-measure_runtime.py) defines
-`measure_time(n, max_delay)`. It measures how long `wait_n` takes to run using
-`time.perf_counter()` and returns the elapsed time divided by `n`.
+[2-measure_runtime.py](2-measure_runtime.py): `measure_time` times a call to
+`wait_n` with `time.perf_counter()` and returns the total time divided by `n`.
 
-[3-tasks.py](3-tasks.py) defines `task_wait_random(max_delay)`. It schedules
-`wait_random` with `asyncio.create_task()` and returns the task for the caller
-to await.
+[3-tasks.py](3-tasks.py): `task_wait_random` creates a task from `wait_random`
+and returns it for the caller to await.
 
-[4-tasks.py](4-tasks.py) defines `task_wait_n(n, max_delay)`. It runs multiple
-random waits concurrently using `asyncio.as_completed()` and returns the delays
-in completion order.
+[4-tasks.py](4-tasks.py): `task_wait_n` runs multiple random waits and collects
+their results with `asyncio.as_completed()`.
 
 `measure_time` is a regular function that starts an event loop with
 `asyncio.run()`. Call it outside an already running event loop and use a positive
@@ -35,10 +30,9 @@ event loop is running because `asyncio.create_task()` schedules work on that loo
 
 ## Run the examples
 
-Python 3.7 or later is required. All imports use the Python standard library;
-no additional packages are needed.
+Requires Python 3.7 or later. There are no extra packages to install.
 
-From this directory, run this standalone example in your terminal:
+Run this from the project directory:
 
 ```bash
 python3 - <<'PY'

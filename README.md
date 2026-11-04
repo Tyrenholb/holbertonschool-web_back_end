@@ -1,7 +1,10 @@
 # Holberton School - Web Back End
 
-Backend development projects completed as part of the Holberton School curriculum.
+My backend projects for Holberton School.
 
-[Python Async Functions](python_async_function/README.md) covers coroutines,
-concurrent execution, runtime measurement, and asyncio tasks.
+[Python Async Functions](python_async_function/README.md): working with
+coroutines, random delays, and tasks.
+
+[Python Async Comprehension](python_async_comprehension/README.md): using async
+generators and comprehensions, then timing four concurrent runs.
 
