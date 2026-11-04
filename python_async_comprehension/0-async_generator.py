@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""A corotuine that loops 10 times and waits 1 second"""
+"""Generate random floats with a one-second delay before each."""
 
 import asyncio
 import random
@@ -7,7 +7,7 @@ from typing import AsyncGenerator
 
 
 async def async_generator() -> AsyncGenerator[float, None]:
-    """Pass no arguements to it, useses random."""
+    """Yield 10 random floats, waiting one second before each."""
     for i in range(10):
         await asyncio.sleep(1)
         yield random.uniform(0, 10)
