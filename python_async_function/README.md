@@ -34,23 +34,18 @@ event loop is running because `asyncio.create_task()` schedules work on that loo
 Python 3.7 or later is required. All imports use the Python standard library;
 no additional packages are needed.
 
-From this directory, run the existing example:
+From this directory, run this standalone example in your terminal:
 
 ```bash
-python3 testmain.py
-```
-
-It runs `task_wait_n(5, 6)` and prints five random delays in ascending order.
-The values change on each run.
-
-To try `wait_n` directly:
-
-```python
+python3 - <<'PY'
 import asyncio
 
 wait_n = __import__('1-concurrent_coroutines').wait_n
 print(asyncio.run(wait_n(5, 2)))
+PY
 ```
+
+It prints five random delays in ascending order. The values change on each run.
 
 The numbered filenames are loaded with `__import__()` because their names cannot
 be used in a normal `import` statement. Omit the `.py` extension when importing.
